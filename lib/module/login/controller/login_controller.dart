@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:crud/state_util.dart';
+import '../../services/service_login.dart';
+import '../view/login_view.dart';
+
+class LoginController extends State<LoginView> implements MvcController {
+  static late LoginController instance;
+  late LoginView view;
+
+  @override
+  void initState() {
+    instance = this;
+    super.initState();
+  }
+
+  @override
+  void dispose() => super.dispose();
+
+  @override
+  Widget build(BuildContext context) => widget.build(context, this);
+
+  String? user;
+  String? password;
+
+  cekLogin() {
+    ServiceLogin().scekLogin(user, password);
+  }
+}
